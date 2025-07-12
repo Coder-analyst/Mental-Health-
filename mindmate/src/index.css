@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  body {
+    @apply bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900;
+    @apply text-white;
+    @apply min-h-screen;
+    @apply overflow-x-hidden;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl;
+    @apply shadow-2xl;
+  }
+  
+  .neumorphism {
+    @apply bg-gradient-to-br from-white/10 to-white/5;
+    @apply border border-white/20;
+    @apply shadow-[inset_0_1px_0_rgba(255,255,255,0.1),0_8px_32px_rgba(0,0,0,0.3)];
+  }
+  
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary-500 to-zen-500;
+    @apply text-white font-medium px-6 py-3 rounded-xl;
+    @apply hover:from-primary-600 hover:to-zen-600;
+    @apply transition-all duration-300;
+    @apply shadow-lg hover:shadow-xl;
+  }
+  
+  .btn-secondary {
+    @apply glass-card text-white font-medium px-6 py-3 rounded-xl;
+    @apply hover:bg-white/20 transition-all duration-300;
+    @apply border border-white/30;
+  }
+  
+  .floating {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .breathing {
+    animation: breathe 4s ease-in-out infinite;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary-400 to-zen-400 bg-clip-text text-transparent;
+  }
+  
+  .glow {
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
+  }
+  
+  .glow-blue {
+    box-shadow: 0 0 20px rgba(14, 165, 233, 0.4);
+  }
+}
